@@ -52,8 +52,8 @@ pip install -r requirements.txt
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/log-analysis-tool.git
-cd log-analysis-tool
+git clone https://github.com/AmanJoshi1604/Log_Analysis.git
+cd Log-Analysis-Tool
 ```
 
 ### 2. Configure MongoDB
@@ -67,8 +67,6 @@ COLLECTION_NAME = "logs"
 ```
 
 ### 3. Set Up Log Collection
-
-Install **Filebeat** or any other log collector of your choice. For example, to install Filebeat, follow the instructions in the [Elastic documentation](https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-installation.html).
 
 Configure your log collector to forward logs to MongoDB or another destination.
 
@@ -106,12 +104,6 @@ The log analysis tool provides a set of command-line options for various operati
   python log_analysis.py --detect-anomalies
   ```
 
-- **Send Alerts**:
-  
-  ```bash
-  python log_analysis.py --send-alerts
-  ```
-
 ### Configuration
 
 You can configure various settings, such as alert thresholds, log formats, and alert methods, in the `config.py` file.
@@ -131,20 +123,6 @@ def custom_parser(log_line):
     # Parsing logic here
     return parsed_data
 ```
-
-### Adding New Alert Channels
-
-To add a new alert channel (e.g., Slack), modify the `alerts.py` file. Here's an example of sending alerts to Slack:
-
-```python
-from slack_sdk import WebClient
-
-def send_slack_alert(message):
-    client = WebClient(token="your-slack-api-token")
-    response = client.chat_postMessage(channel="#alerts", text=message)
-```
-
----
 
 ## Machine Learning for Anomaly Detection
 
@@ -191,28 +169,3 @@ EMAIL_USER = "youremail@example.com"
 EMAIL_PASSWORD = "yourpassword"
 ALERT_RECIPIENTS = ["recipient@example.com"]
 ```
-
----
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## Contributing
-
-Contributions are welcome! Please submit a pull request or open an issue for discussion.
-
----
-
-## Contact
-
-For any questions or suggestions, please contact:
-
-- **Author**: Your Name
-- **Email**: your.email@example.com
-
----
-
-This `README.md` file provides the necessary steps and configurations to get the log analysis tool up and running while also offering guidance on customization and advanced features. Let me know if you'd like to further customize any section based on your project specifics!
