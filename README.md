@@ -139,33 +139,6 @@ def detect_anomalies(logs):
 
 ---
 
-## Visualizations
-
-To visualize log data, you can use **Grafana** or **MongoDB Charts**. Connect your MongoDB database to Grafana or use the `plotly` and `matplotlib` libraries to create custom visualizations.
-
-Example visualization code with Matplotlib:
-
-```python
-import matplotlib.pyplot as plt
-
-def visualize_logs(data):
-    plt.plot(data['timestamp'], data['error_count'])
-    plt.title('Error Count Over Time')
-    plt.show()
-```
-
----
-
 ## Alerts and Notifications
 
 Alerts are sent when certain conditions (e.g., anomalies or predefined log patterns) are met. You can customize the alert thresholds and recipients in the `config.py` file.
-
-For email alerts, make sure to configure your SMTP server settings:
-
-```python
-EMAIL_HOST = "smtp.yourprovider.com"
-EMAIL_PORT = 587
-EMAIL_USER = "youremail@example.com"
-EMAIL_PASSWORD = "yourpassword"
-ALERT_RECIPIENTS = ["recipient@example.com"]
-```
